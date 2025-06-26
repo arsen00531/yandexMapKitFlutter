@@ -1,0 +1,11 @@
+## This file must *NOT* be checked into Version Control Systems,
+# as it contains information specific to your local configuration.
+#
+# Location of the SDK. This is only used by Gradle.
+# For customization when using a Continuous Integration platform, please see the
+# documentation page at https://docs.flutter.dev/testing/build-modes
+sdk.dir=C:\\Users\\YourUsername\\AppData\\Local\\Android\\sdk
+flutter.sdk=C:\\src\\flutter
+
+# 🔑 API ключи (НЕ загружать в Git!)
+yandex.mapkit.api.key=yandex.mapkit.api.key
