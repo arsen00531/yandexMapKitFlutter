@@ -4,7 +4,6 @@ import java.io.FileInputStream
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
@@ -16,7 +15,7 @@ if (localPropertiesFile.exists()) {
     localProperties.load(FileInputStream(localPropertiesFile))
 }
 
-val yandexMapkitApiKey = localProperties.getProperty("yandex.mapkit.api.key") ?: "YOUR_API_KEY_HERE"
+val yandexMapkitApiKey: String = localProperties.getProperty("yandex.mapkit.api.key") ?: "YOUR_API_KEY_HERE"
 
 android {
     namespace = "com.example.flutter_application_2"
@@ -39,14 +38,12 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        // 🔑 Используем API ключ из local.properties
         manifestPlaceholders["YANDEX_MAPKIT_API_KEY"] = yandexMapkitApiKey
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            // Используем debug подпись для простоты
             signingConfig = signingConfigs.getByName("debug")
         }
     }
